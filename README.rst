@@ -10,7 +10,7 @@ Installation
 
 .. code-block:: bash
 
-    pip install git+ssh://git@github.com:bnelair/brainmaze_data_files.git
+    pip install --force git+https://github.com/bnelair/brainmaze_data_files.git@fmivalt/dev-cadence_ds
 
 
 License
