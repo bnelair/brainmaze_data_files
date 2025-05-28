@@ -1,0 +1,66 @@
+# pyproject.toml
+
+# 1. Build System Configuration
+# Tells pip and other build tools how to build your project.
+[build-system]
+requires = ["setuptools>=61.0"] # setuptools is the build backend
+build-backend = "setuptools.build_meta"
+#backend-path = ["."] # Ensures setuptools can find its own dynamic config tools if needed
+
+# 2. Project Metadata (PEP 621)
+# This section replaces most of what was in your setup() call.
+[project]
+name = "brainmaze-datutils"
+dynamic = ["version", "dependencies"]
+description = "BrainMaze: Brain Electrophysiology, Behavior and Dynamics Analysis Toolbox"
+readme = "README.md" # Specifies the README file and its format
+requires-python = ">=3.9.0"
+license = { text = "BSD-3-Clause" } # You can also use file = "LICENSE" if you have a separate LICENSE file
+
+authors = [
+    { name = "Filip Mivalt", email = "mivalt.filip@mayo.edu" },
+]
+maintainers = [
+    { name = "Filip Mivalt", email = "mivalt.filip@mayo.edu" },
+]
+
+classifiers = [
+    'Topic :: Scientific/Engineering :: Medical Science Apps.',
+    "Development Status :: 3 - Alpha",
+    'Programming Language :: Python',
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3.9',
+    'Programming Language :: Python :: 3.10',
+    'Programming Language :: Python :: 3.11',
+    'Programming Language :: Python :: 3.12',
+    'Operating System :: OS Independent',
+    "License :: OSI Approved :: BSD License", # This is the SPDX identifier for BSD-3-Clause
+    'Intended Audience :: Healthcare Industry',
+    'Intended Audience :: Science/Research',
+]
+
+# Project URLs
+[project.urls]
+Homepage = "https://github.com/bnelair/brainmaze_datutils"
+Documentation = "https://bnelair.github.io/brainmaze/index.html"
+
+
+
+# 3. Tool-specific Configuration
+# Configuration for setuptools
+[tool.setuptools]
+include-package-data = true # Corresponds to include_package_data=True
+
+# Tells setuptools how to find your packages
+[tool.setuptools.packages.find]
+where = ["."]  # Adjust if your packages are in a subdirectory like 'src'
+exclude = ["tests*"]
+
+# Dynamic versioning configuration for setuptools
+# This tells setuptools to get the version from brainmaze_datutils/__init__.py
+[tool.setuptools.dynamic.version]
+attr = "brainmaze_datutils.__init__.__version__"
+
+# Dynamic dependencies configuration (to read from requirements.txt)
+[tool.setuptools.dynamic.dependencies]
+file = ["requirements.txt"]
