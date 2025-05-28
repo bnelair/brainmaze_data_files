@@ -5,7 +5,7 @@ This toolbox provides data conversion tools for the BrainMaze project.
 ## Installation
 
 ```bash
-pip install --force git+https://github.com/bnelair/brainmaze_data_files.git@fmivalt/dev-cadence_ds
+pip install --force git+https://github.com/bnelair/brainmaze_datutils.git@dev
 ```
 
 ## License
