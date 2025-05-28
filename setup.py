@@ -9,7 +9,7 @@ import os
 import setuptools
 
 
-NAME='brainmaze-data-files'
+NAME='brainmaze-datutils'
 DESCRIPTION='BrainMaze: Brain Electrophysiology, Behavior and Dynamics Analysis Toolbox'
 LONG_DESCRIPTION=open('README.rst', encoding='utf-8').read()
 EMAIL='mivalt.filip@mayo.edu'
